@@ -8,7 +8,9 @@ const Renderer = function () {
 
   const creatPost = function (post) {
     const POST_TEXT = `<p class="post-text">${post.text}</p>`;
-    const POST_ElEMENT = $(`<div class="post" data-postid="${post.id}">${POST_TEXT}</div>`);
+    const POST_ElEMENT = $(
+      `<div class="post" data-postid="${post.id}">${POST_TEXT}</div>`
+    );
     appendComments(post.comments, POST_ElEMENT);
     POST_ElEMENT.append(createCommentInput());
     POST_ElEMENT.append($(`<div class="delete">Delete Post</div>`));
