@@ -1,6 +1,4 @@
-const DATA_POST_COUNTER = 2;
-const DATA_COMMENTS_COUNTER = 6;
-const data = [
+const posts = [
   {
     text: "First post!",
     id: "p1",
@@ -20,3 +18,10 @@ const data = [
     ],
   },
 ];
+
+let DATA_POST_COUNTER = posts.length;
+let DATA_COMMENTS_COUNTER = 0;
+
+for (post of posts) {
+  DATA_COMMENTS_COUNTER += post.comments;
+}

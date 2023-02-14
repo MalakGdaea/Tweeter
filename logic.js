@@ -1,6 +1,6 @@
 const Tweeter = function () {
   const _posts = [];
-  _posts.push(...data);
+  _posts.push(...posts);
   let _postIdCounter = DATA_POST_COUNTER;
   let _commentIdCounter = DATA_COMMENTS_COUNTER;
 
@@ -8,7 +8,7 @@ const Tweeter = function () {
     return _posts;
   };
 
-  const findPost = function (postID) {
+  const findPostIndex = function (postID) {
     for (let postIndex in _posts) {
       if (_posts[postIndex].id === postID) {
         return postIndex;
@@ -27,12 +27,12 @@ const Tweeter = function () {
   };
 
   const removePost = function (postID) {
-    let postIndex = findPost(postID);
+    let postIndex = findPostIndex(postID);
     _posts.splice(postIndex, 1);
   };
 
   const addComment = function (postID, text) {
-    let postIndex = findPost(postID);
+    let postIndex = findPostIndex(postID);
     _commentIdCounter++;
     _posts[postIndex].comments.push({
       id: "c" + _commentIdCounter,
@@ -41,7 +41,7 @@ const Tweeter = function () {
   };
 
   const removeComment = function (postID, commentID) {
-    let postIndex = findPost(postID);
+    let postIndex = findPostIndex(postID);
     let comments = _posts[postIndex].comments;
     for (commentIndex in comments) {
       if (comments[commentIndex].id === commentID) {
