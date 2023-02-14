@@ -1,8 +1,8 @@
 const Tweeter = function () {
   const _posts = [];
   _posts.push(...posts);
-  let _postIdCounter = DATA_POST_COUNTER;
-  let _commentIdCounter = DATA_COMMENTS_COUNTER;
+  let _postIdCounter = dataPostCounter;
+  let _commentIdCounter = dataCommentsCounter;
 
   const getPosts = function () {
     return _posts;

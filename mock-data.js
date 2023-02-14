@@ -19,9 +19,9 @@ const posts = [
   },
 ];
 
-let DATA_POST_COUNTER = posts.length;
-let DATA_COMMENTS_COUNTER = 0;
+let dataPostCounter = posts.length;
+let dataCommentsCounter = 0;
 
 for (post of posts) {
-  DATA_COMMENTS_COUNTER += post.comments;
+  dataCommentsCounter += post.comments;
 }
